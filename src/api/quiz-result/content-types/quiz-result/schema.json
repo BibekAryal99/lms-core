@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quiz_results",
+  "info": {
+    "singularName": "quiz-result",
+    "pluralName": "quiz-results",
+    "displayName": "QuizResult",
+    "description": "Stores a student's quiz attempt and score"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "quiz": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quiz.quiz"
+    },
+    "answers": {
+      "type": "json"
+    },
+    "score": {
+      "type": "integer",
+      "required": true
+    },
+    "totalQuestions": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
